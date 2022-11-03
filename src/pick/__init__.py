@@ -125,7 +125,7 @@ class Picker(Generic[OPTION_T]):
         if current_line <= self.scroll_top:
             self.scroll_top = 0
         elif current_line - self.scroll_top > max_rows:
-            self.scroll_top = current_line - max_rows
+            self.scroll_top = 1 + current_line - max_rows
 
         lines_to_draw = lines[self.scroll_top : self.scroll_top + max_rows]
 
